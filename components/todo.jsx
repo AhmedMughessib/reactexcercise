@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 
-function TodoApp() {
+function Todo() {
   const [todos, setTodos] = useState([]);
   const [newTodo, setNewTodo] = useState('');
 
@@ -13,7 +13,7 @@ function TodoApp() {
       return;
     }
 
-    const newId = todos.length > 0 ? todos[todos.length - 1].id + 1 : 1;
+    const newId = todos.length;
     const newTodoItem = {
       id: newId,
       description: newTodo
@@ -30,14 +30,14 @@ function TodoApp() {
 
   return (
     <div>
-      <h1>Todo App</h1>
+      <h1>Todo </h1>
       <input
         type="text"
         value={newTodo}
         onChange={handleInputChange}
         placeholder="Enter a new todo"
       />
-      <button onClick={handleAddTodo}>Add Todo</button>
+      <button onClick={handleAddTodo}>Add Task</button>
       <ul>
         {todos.map((todo) => (
           <li key={todo.id}>
@@ -50,4 +50,4 @@ function TodoApp() {
   );
 }
 
-export default TodoApp;
+export default Todo;
